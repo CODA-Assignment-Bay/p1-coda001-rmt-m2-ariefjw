@@ -21,7 +21,7 @@
     <WindowsPersistSimpleIdentifiers />
     <WorksheetBackgroundTransparency />
   </document-format-change-manifest>
-  <repository-location id='Book1_17321645170890' path='/workbooks' revision='1.4' />
+  <repository-location id='Book1_17321645170890' path='/workbooks' revision='1.7' />
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
@@ -610,6 +610,9 @@
       <column caption='Place Ratings' datatype='integer' name='[Place_Ratings]' role='measure' type='quantitative' />
       <column datatype='real' name='[Rating]' role='measure' type='quantitative' />
       <column caption='Time Minutes' datatype='real' name='[Time_Minutes]' role='measure' type='quantitative' />
+      <column aggregation='None' datatype='integer' name='[User Id1 (bin)]' role='dimension' type='quantitative'>
+        <calculation class='bin' decimals='1' formula='[User Id]' peg='0' size='12.6' />
+      </column>
       <column caption='User Id1' datatype='integer' name='[User Id]' role='dimension' type='ordinal' />
       <column caption='User Id (user.csv)' datatype='integer' name='[User_Id (user.csv)]' role='dimension' type='ordinal' />
       <column caption='User Id' datatype='integer' name='[User_Id]' role='dimension' type='ordinal' />
@@ -642,13 +645,18 @@
           <groupfilter function='level-members' level='[Place_Name]' />
         </groupfilter>
       </group>
+      <group caption='Action (Place Name1)' hidden='true' name='[Action (Place Name1)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Place Name]' />
+        </groupfilter>
+      </group>
       <group caption='Action (Provinsi)' hidden='true' name='[Action (Provinsi)]' name-style='unqualified' user:auto-column='sheet_link'>
         <groupfilter function='crossjoin'>
           <groupfilter function='level-members' level='[Location - Split 2]' />
         </groupfilter>
       </group>
       <extract _.fcp.ObjectModelExtractV2.true...object-id='' _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/IDEAPA~1/AppData/Local/Temp/TableauTemp/#TableauTemp_1tu7s2s1jzpbcg1593s4809eezmk.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/IDEAPA~1/AppData/Local/Temp/TableauTemp/#TableauTemp_1tu7s2s1jzpbcg1593s4809eezmk.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='11/21/2024 11:32:04 AM' username='tableau_internal_user'>
           <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D' table='[Extract].[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]' type='table' />
           <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
             <relation name='tour.csv_9D51EB84BB694C29AFB72184018D7676' table='[Extract].[tour.csv_9D51EB84BB694C29AFB72184018D7676]' type='table' />
@@ -699,6 +707,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Place_Name</remote-name>
@@ -713,6 +722,7 @@
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Description</remote-name>
@@ -727,6 +737,7 @@
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Category</remote-name>
@@ -741,6 +752,7 @@
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>City</remote-name>
@@ -755,6 +767,7 @@
               <approx-count>1</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Price</remote-name>
@@ -768,6 +781,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>24</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Rating</remote-name>
@@ -781,6 +795,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>10</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Time_Minutes</remote-name>
@@ -794,6 +809,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>10</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Coordinate</remote-name>
@@ -808,6 +824,7 @@
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Latitude</remote-name>
@@ -821,6 +838,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Longitude</remote-name>
@@ -834,6 +852,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>User Id</remote-name>
@@ -847,6 +866,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>314</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Place Id (tour rating.csv)</remote-name>
@@ -860,6 +880,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Place Ratings</remote-name>
@@ -873,6 +894,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Location</remote-name>
@@ -887,6 +909,7 @@
               <approx-count>28</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Age</remote-name>
@@ -900,6 +923,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>23</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Place Name</remote-name>
@@ -914,6 +938,7 @@
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Category</remote-name>
@@ -928,6 +953,7 @@
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Price</remote-name>
@@ -941,6 +967,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>24</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Rating</remote-name>
@@ -954,6 +981,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>10</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Latitude</remote-name>
@@ -967,6 +995,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Longitude</remote-name>
@@ -980,6 +1009,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>User_Id</remote-name>
@@ -993,6 +1023,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>313</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour_rating.csv_09E88531DC10446E8CAD6EC542B0D0E3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Place_Id</remote-name>
@@ -1006,6 +1037,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour_rating.csv_09E88531DC10446E8CAD6EC542B0D0E3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Place_Ratings</remote-name>
@@ -1019,6 +1051,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour_rating.csv_09E88531DC10446E8CAD6EC542B0D0E3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>User_Id</remote-name>
@@ -1032,6 +1065,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>300</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[user.csv_C2A4FD371E8D46088EC9C19A3261ADDA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Location</remote-name>
@@ -1046,6 +1080,7 @@
               <approx-count>28</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[user.csv_C2A4FD371E8D46088EC9C19A3261ADDA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Age</remote-name>
@@ -1059,6 +1094,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>23</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[user.csv_C2A4FD371E8D46088EC9C19A3261ADDA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
           </metadata-records>
         </connection>
@@ -1276,11 +1312,15 @@
           </datasources>
           <datasource-dependencies datasource='federated.0ybo85l04ftxl214cwwpt0bz51nb'>
             <column datatype='string' name='[Category]' role='dimension' type='nominal' />
+            <column caption='Place Name1' datatype='string' name='[Place Name]' role='dimension' type='nominal' />
             <column caption='Place Name' datatype='string' name='[Place_Name]' role='dimension' type='nominal' />
             <column-instance column='[Category]' derivation='None' name='[none:Category:nk]' pivot='key' type='nominal' />
           </datasource-dependencies>
           <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]'>
             <groupfilter function='level-members' level='[Place_Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name1)]'>
+            <groupfilter function='level-members' level='[Place Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
           <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[none:Category:nk]'>
             <groupfilter function='level-members' level='[none:Category:nk]' user:ui-enumeration='all' user:ui-exclude='true' user:ui-marker='enumerate' />
@@ -1288,6 +1328,7 @@
           <slices>
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[none:Category:nk]</column>
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]</column>
+            <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name1)]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -1379,6 +1420,7 @@
           </datasources>
           <datasource-dependencies datasource='federated.0ybo85l04ftxl214cwwpt0bz51nb'>
             <column datatype='string' name='[Category]' role='dimension' type='nominal' />
+            <column caption='Place Name1' datatype='string' name='[Place Name]' role='dimension' type='nominal' />
             <column caption='Place Id' datatype='integer' name='[Place_Id]' role='dimension' type='ordinal' />
             <column caption='Place Name' datatype='string' name='[Place_Name]' role='dimension' type='nominal' />
             <column-instance column='[Place_Id]' derivation='CountD' name='[ctd:Place_Id:qk]' pivot='key' type='quantitative' />
@@ -1389,9 +1431,13 @@
           <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]'>
             <groupfilter function='level-members' level='[Place_Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
+          <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name1)]'>
+            <groupfilter function='level-members' level='[Place Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
           <slices>
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Category)]</column>
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]</column>
+            <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name1)]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -1458,6 +1504,7 @@
               </calculation>
             </column>
             <column datatype='string' name='[Category]' role='dimension' type='nominal' />
+            <column caption='Place Name1' datatype='string' name='[Place Name]' role='dimension' type='nominal' />
             <column caption='Place Name' datatype='string' name='[Place_Name]' role='dimension' type='nominal' />
             <column caption='User Id' datatype='integer' name='[User_Id]' role='dimension' type='ordinal' />
             <column-instance column='[User_Id]' derivation='Count' name='[cnt:User_Id:qk]' pivot='key' type='quantitative' />
@@ -1472,6 +1519,12 @@
           <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Category)]'>
             <groupfilter function='level-members' level='[Category]' user:ui-action-filter='[Action2_288FA15EC2AB4E98B8D2F198BA3B6256]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
+          <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]'>
+            <groupfilter function='level-members' level='[Place_Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name1)]'>
+            <groupfilter function='level-members' level='[Place Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
           <filter class='quantitative' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[usr:Calculation_291889567028285443:qk:1]' included-values='in-range'>
             <min>1</min>
             <max>5</max>
@@ -1482,6 +1535,8 @@
           <slices>
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[usr:Calculation_291889567028285443:qk:1]</column>
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Category)]</column>
+            <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name1)]</column>
+            <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -1562,6 +1617,60 @@
       </table>
       <simple-id uuid='{EE5BBE63-214D-4BB8-9B3B-D6956C4BFB54}' />
     </worksheet>
+    <worksheet name='Sheet 12'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='tour.csv+ (Multiple Connections)' name='federated.0ybo85l04ftxl214cwwpt0bz51nb' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0ybo85l04ftxl214cwwpt0bz51nb'>
+            <column datatype='string' name='[Category]' role='dimension' type='nominal' />
+            <column caption='Place Name1' datatype='string' name='[Place Name]' role='dimension' type='nominal' />
+            <column caption='Place Name' datatype='string' name='[Place_Name]' role='dimension' type='nominal' />
+            <column caption='User Id1' datatype='integer' name='[User Id]' role='dimension' type='ordinal' />
+            <column-instance column='[User Id]' derivation='Count' name='[cnt:User Id:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Place Name]' derivation='None' name='[none:Place Name:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Category)]'>
+            <groupfilter function='level-members' level='[Category]' user:ui-action-filter='[Action2_288FA15EC2AB4E98B8D2F198BA3B6256]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]'>
+            <groupfilter function='level-members' level='[Place_Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Category)]</column>
+            <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[cnt:User Id:qk]' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <lod column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[none:Place Name:nk]' />
+            </encodings>
+            <reference-line axis-column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[cnt:User Id:qk]' boxplot-mark-exclusion='false' boxplot-whisker-type='standard' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-cell' symmetric='false' value-column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[cnt:User Id:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.71364641189575195' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[cnt:User Id:qk]</cols>
+      </table>
+      <simple-id uuid='{F6D9A331-2C80-4D2F-A188-90F315DFBCBE}' />
+    </worksheet>
     <worksheet name='Sheet 2'>
       <layout-options>
         <title>
@@ -1577,6 +1686,7 @@
           </datasources>
           <datasource-dependencies datasource='federated.0ybo85l04ftxl214cwwpt0bz51nb'>
             <column datatype='string' name='[Category]' role='dimension' type='nominal' />
+            <column caption='Place Name1' datatype='string' name='[Place Name]' role='dimension' type='nominal' />
             <column caption='Place Name' datatype='string' name='[Place_Name]' role='dimension' type='nominal' />
             <column caption='User Id' datatype='integer' name='[User_Id]' role='dimension' type='ordinal' />
             <column-instance column='[User_Id]' derivation='Count' name='[cnt:User_Id:qk]' pivot='key' type='quantitative' />
@@ -1587,9 +1697,13 @@
           <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]'>
             <groupfilter function='level-members' level='[Place_Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
+          <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name1)]'>
+            <groupfilter function='level-members' level='[Place Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
           <slices>
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Category)]</column>
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]</column>
+            <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name1)]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -1646,6 +1760,7 @@
           </datasources>
           <datasource-dependencies datasource='federated.0ybo85l04ftxl214cwwpt0bz51nb'>
             <column datatype='string' name='[Category]' role='dimension' type='nominal' />
+            <column caption='Place Name1' datatype='string' name='[Place Name]' role='dimension' type='nominal' />
             <column caption='Place Name' datatype='string' name='[Place_Name]' role='dimension' type='nominal' />
             <column datatype='real' name='[Rating]' role='measure' type='quantitative' />
             <column-instance column='[Rating]' derivation='Avg' name='[avg:Rating:qk]' pivot='key' type='quantitative' />
@@ -1656,9 +1771,13 @@
           <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]'>
             <groupfilter function='level-members' level='[Place_Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
+          <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name1)]'>
+            <groupfilter function='level-members' level='[Place Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
           <slices>
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Category)]</column>
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]</column>
+            <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name1)]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -1718,6 +1837,7 @@
             <column datatype='string' name='[Category]' role='dimension' type='nominal' />
             <column aggregation='Avg' datatype='real' name='[Latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
             <column aggregation='Avg' datatype='real' name='[Longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column caption='Place Name1' datatype='string' name='[Place Name]' role='dimension' type='nominal' />
             <column caption='Place Name' datatype='string' name='[Place_Name]' role='dimension' type='nominal' />
             <column caption='User Id' datatype='integer' name='[User_Id]' role='dimension' type='ordinal' />
             <column-instance column='[User_Id]' derivation='CountD' name='[ctd:User_Id:qk]' pivot='key' type='quantitative' />
@@ -1732,16 +1852,20 @@
           <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]'>
             <groupfilter function='level-members' level='[Place_Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
+          <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name1)]'>
+            <groupfilter function='level-members' level='[Place Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
           <slices>
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Category)]</column>
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]</column>
+            <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name1)]</column>
           </slices>
           <aggregation value='true' />
         </view>
         <style>
           <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[none:Longitude:qk]' field-type='quantitative' max='12358390.76505442' min='12238432.534067901' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[none:Latitude:qk]' field-type='quantitative' max='-841741.57225640595' min='-918198.46932421147' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[none:Longitude:qk]' field-type='quantitative' max='12382526.291845262' min='12188745.270291168' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[none:Latitude:qk]' field-type='quantitative' max='-815815.11025963316' min='-939323.89741671132' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
           </style-rule>
           <style-rule element='map'>
             <format attr='washout' value='0.0' />
@@ -1786,6 +1910,7 @@
           </datasources>
           <datasource-dependencies datasource='federated.0ybo85l04ftxl214cwwpt0bz51nb'>
             <column datatype='string' name='[Category]' role='dimension' type='nominal' />
+            <column caption='Place Name1' datatype='string' name='[Place Name]' role='dimension' type='nominal' />
             <column caption='Place Name' datatype='string' name='[Place_Name]' role='dimension' type='nominal' />
             <column datatype='integer' name='[Price (data-1732188477417.csv)]' role='measure' type='quantitative' />
             <column-instance column='[Price (data-1732188477417.csv)]' derivation='Sum' name='[sum:Price (data-1732188477417.csv):qk]' pivot='key' type='quantitative' />
@@ -1796,9 +1921,13 @@
           <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]'>
             <groupfilter function='level-members' level='[Place_Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
+          <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name1)]'>
+            <groupfilter function='level-members' level='[Place Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
           <slices>
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Category)]</column>
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]</column>
+            <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name1)]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -1852,6 +1981,7 @@
               </calculation>
             </column>
             <column datatype='string' name='[Category]' role='dimension' type='nominal' />
+            <column caption='Place Name1' datatype='string' name='[Place Name]' role='dimension' type='nominal' />
             <column caption='Place Name' datatype='string' name='[Place_Name]' role='dimension' type='nominal' />
             <column caption='User Id' datatype='integer' name='[User_Id]' role='dimension' type='ordinal' />
             <_.fcp.ObjectModelTableType.false...column caption='user.csv' datatype='integer' name='[__tableau_internal_object_id__].[user.csv_C2A4FD371E8D46088EC9C19A3261ADDA]' role='measure' type='quantitative' />
@@ -1871,6 +2001,9 @@
           </filter>
           <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]'>
             <groupfilter function='level-members' level='[Place_Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name1)]'>
+            <groupfilter function='level-members' level='[Place Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
           <manual-sort column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[none:Place_Name:nk]' direction='ASC'>
             <dictionary>
@@ -2011,6 +2144,7 @@
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[usr:Calculation_291889567028285443:qk:1]</column>
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Category)]</column>
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]</column>
+            <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name1)]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -2056,6 +2190,7 @@
           <datasource-dependencies datasource='federated.0ybo85l04ftxl214cwwpt0bz51nb'>
             <column datatype='real' name='[Age]' role='measure' type='quantitative' />
             <column datatype='string' name='[Category]' role='dimension' type='nominal' />
+            <column caption='Place Name1' datatype='string' name='[Place Name]' role='dimension' type='nominal' />
             <column caption='Place Name' datatype='string' name='[Place_Name]' role='dimension' type='nominal' />
             <column-instance column='[Age]' derivation='Avg' name='[avg:Age:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
@@ -2065,9 +2200,13 @@
           <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]'>
             <groupfilter function='level-members' level='[Place_Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
+          <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name1)]'>
+            <groupfilter function='level-members' level='[Place Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
           <slices>
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Category)]</column>
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]</column>
+            <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name1)]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -2137,6 +2276,7 @@
               <calculation class='tableau' formula='TRIM( SPLIT( [Location], &quot;,&quot;, 2 ) )' />
             </column>
             <column datatype='string' name='[Location]' role='dimension' type='nominal' />
+            <column caption='Place Name1' datatype='string' name='[Place Name]' role='dimension' type='nominal' />
             <column caption='Place Name' datatype='string' name='[Place_Name]' role='dimension' type='nominal' />
             <column caption='User Id' datatype='integer' name='[User_Id]' role='dimension' type='ordinal' />
             <column-instance column='[User_Id]' derivation='CountD' name='[ctd:User_Id:qk]' pivot='key' type='quantitative' />
@@ -2148,10 +2288,14 @@
           <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]'>
             <groupfilter function='level-members' level='[Place_Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
+          <filter class='categorical' column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name1)]'>
+            <groupfilter function='level-members' level='[Place Name]' user:ui-action-filter='[Action1_9906EBF197E54927BDF0EBCE05AC3E9C]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
           <computed-sort column='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[none:Location - Split 2:nk]' direction='DESC' using='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[ctd:User_Id:qk]' />
           <slices>
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Category)]</column>
             <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name)]</column>
+            <column>[federated.0ybo85l04ftxl214cwwpt0bz51nb].[Action (Place Name1)]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -2194,6 +2338,7 @@
             <format attr='background-color' value='#6696ac' />
           </zone-style>
         </zone>
+        <zone h='11702' id='80' name='Sheet 12' show-title='false' w='39401' x='59641' y='2234' />
         <zone h='12340' id='27' name='Filter' show-title='false' w='38204' x='719' y='2340'>
           <zone-style>
             <format attr='border-color' value='#000000' />
@@ -2259,7 +2404,7 @@
         <zone h='38936' id='55' name='Sheet 7' show-title='false' w='29341' x='69820' y='60213' />
         <zone forceUpdate='true' h='4043' id='60' type-v2='text' w='8323' x='15689' y='106'>
           <formatted-text>
-            <run bold='true' fontcolor='#333333' fontname='Tableau Semibold' fontsize='11'>Kategori</run>
+            <run bold='true' fontcolor='#e6e6e6' fontname='Tableau Semibold' fontsize='15'>Kategori</run>
           </formatted-text>
           <zone-style>
             <format attr='border-color' value='#000000' />
@@ -2278,9 +2423,9 @@
             <run bold='true' fontname='Tableau Semibold' fontsize='11'>Rating</run>
           </formatted-text>
         </zone>
-        <zone forceUpdate='true' h='2660' id='63' type-v2='text' w='7186' x='16407' y='69043'>
+        <zone forceUpdate='true' h='2979' id='63' type-v2='text' w='8862' x='15569' y='69149'>
           <formatted-text>
-            <run bold='true' fontalignment='1' fontcolor='#333333' fontname='Tableau Semibold' fontsize='12'>Pengunjung</run>
+            <run bold='true' fontalignment='1' fontcolor='#f5f5f5' fontname='Tableau Semibold' fontsize='15'>Pengunjung</run>
           </formatted-text>
           <zone-style>
             <format attr='border-color' value='#000000' />
@@ -2296,11 +2441,11 @@
         </zone>
         <zone forceUpdate='true' h='3830' id='65' type-v2='text' w='10898' x='28084' y='70319'>
           <formatted-text>
-            <run bold='true' fontalignment='2' fontname='Tableau Semibold' fontsize='11'>Rata-rata Kunjungan</run>
+            <run bold='true' fontalignment='2' fontname='Tableau Semibold' fontsize='11'>Rata-rata Umur</run>
           </formatted-text>
         </zone>
         <zone h='40319' id='66' name='Sheet 11' show-title='false' w='59581' x='39521' y='14468' />
-        <zone h='11489' id='73' name='Sheet 5' show-title='false' w='19760' x='39461' y='2340' />
+        <zone h='11489' id='73' name='Sheet 5' show-title='false' w='19760' x='39521' y='2340' />
         <zone h='3191' id='74' type-v2='text' w='10359' x='44072' y='2340'>
           <formatted-text>
             <run bold='true' fontalignment='1' fontname='Tableau Semibold' fontsize='12'>Pendapatan Tiket</run>
@@ -2326,16 +2471,33 @@
             <format attr='border-width' value='2' />
           </zone-style>
         </zone>
+        <zone forceUpdate='true' h='3191' id='79' type-v2='text' w='16826' x='72515' y='745'>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#f5f5f5' fontname='Tableau Semibold' fontsize='15'>Distribusi Pengunjung</run>
+            <run fontalignment='1'>Æ&#10;</run>
+          </formatted-text>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='background-color' value='#6696ac' />
+          </zone-style>
+        </zone>
+        <zone h='3191' id='81' type-v2='text' w='18743' x='60778' y='14574'>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontname='Tableau Semibold' fontsize='12'>Jumlah Pengunjung per Kategori</run>
+          </formatted-text>
+        </zone>
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
-          <size maxheight='2800' minheight='2800' sizing-mode='vscroll' />
+          <size maxheight='3200' minheight='3200' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='76' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98298' id='75' param='vert' type-v2='layout-flow' w='99042' x='479' y='851'>
+            <zone h='100000' id='91' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98298' id='90' param='vert' type-v2='layout-flow' w='99042' x='479' y='851'>
                 <zone forceUpdate='true' h='4043' id='60' type-v2='text' w='8323' x='15689' y='106'>
                   <formatted-text>
-                    <run bold='true' fontcolor='#333333' fontname='Tableau Semibold' fontsize='11'>Kategori</run>
+                    <run bold='true' fontcolor='#e6e6e6' fontname='Tableau Semibold' fontsize='15'>Kategori</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2346,7 +2508,30 @@
                     <format attr='background-color' value='#6696ac' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='116' h='12340' id='27' is-fixed='true' name='Filter' show-title='false' w='38144' x='778' y='2340'>
+                <zone forceUpdate='true' h='3191' id='79' type-v2='text' w='16826' x='72515' y='745'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontcolor='#f5f5f5' fontname='Tableau Semibold' fontsize='15'>Distribusi Pengunjung</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#6696ac' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='110' h='11702' id='80' is-fixed='true' name='Sheet 12' show-title='false' w='39401' x='59641' y='2234'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='116' h='12340' id='27' is-fixed='true' name='Filter' show-title='false' w='38204' x='719' y='2340'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -2356,7 +2541,7 @@
                     <format attr='background-color' value='#f5f5f5' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='108' h='11489' id='73' is-fixed='true' name='Sheet 5' show-title='false' w='19760' x='39461' y='2340'>
+                <zone fixed-size='108' h='11489' id='73' is-fixed='true' name='Sheet 5' show-title='false' w='19760' x='39521' y='2340'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -2438,7 +2623,19 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='44468' id='66' is-fixed='true' name='Sheet 11' show-title='false' w='59581' x='39521' y='14468'>
+                <zone fixed-size='280' h='40319' id='66' is-fixed='true' name='Sheet 11' show-title='false' w='59581' x='39521' y='14468'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='3191' id='81' type-v2='text' w='18743' x='60778' y='14574'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontname='Tableau Semibold' fontsize='12'>Jumlah Pengunjung per Kategori</run>
+                  </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -2500,6 +2697,30 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
+                <zone forceUpdate='true' h='3191' id='77' type-v2='text' w='29341' x='39581' y='55957'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontcolor='#ffffff' fontname='Tableau Semibold' fontsize='11'>5 Lokasi Terpopuler</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#e6e6e6' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='2' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='3191' id='78' type-v2='text' w='29341' x='69820' y='55957'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontcolor='#ffffff' fontname='Tableau Semibold' fontsize='11'>5 Lokasi Kurang Populer</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#e6e6e6' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='2' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
                 <zone fixed-size='280' h='38936' id='40' is-fixed='true' name='Sheet 10' show-title='false' w='29341' x='39581' y='60213'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2518,9 +2739,9 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone forceUpdate='true' h='2660' id='63' type-v2='text' w='7186' x='16407' y='69043'>
+                <zone forceUpdate='true' h='2979' id='63' type-v2='text' w='8862' x='15569' y='69149'>
                   <formatted-text>
-                    <run bold='true' fontalignment='1' fontcolor='#333333' fontname='Tableau Semibold' fontsize='12'>Pengunjung</run>
+                    <run bold='true' fontalignment='1' fontcolor='#f5f5f5' fontname='Tableau Semibold' fontsize='15'>Pengunjung</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2564,7 +2785,7 @@
                 </zone>
                 <zone forceUpdate='true' h='3830' id='65' type-v2='text' w='10898' x='28084' y='70319'>
                   <formatted-text>
-                    <run bold='true' fontalignment='2' fontname='Tableau Semibold' fontsize='11'>Rata-rata Kunjungan</run>
+                    <run bold='true' fontalignment='2' fontname='Tableau Semibold' fontsize='11'>Rata-rata Umur</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2875,6 +3096,29 @@
       </cards>
       <simple-id uuid='{23C1D6EA-1D8F-4FED-8917-71F910A0FBDA}' />
     </window>
+    <window class='worksheet' name='Sheet 12'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{436942EF-E834-49D8-8791-8E46726F9155}' />
+    </window>
     <window class='dashboard' maximized='true' name='Dashboard 1'>
       <viewpoints>
         <viewpoint name='Filter'>
@@ -2887,6 +3131,9 @@
           <zoom type='entire-view' />
         </viewpoint>
         <viewpoint name='Sheet 11'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 12'>
           <zoom type='entire-view' />
         </viewpoint>
         <viewpoint name='Sheet 2'>
@@ -2912,7 +3159,7 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='73' />
+      <active id='27' />
       <simple-id uuid='{6A0922F7-5425-4112-9930-430D30E421F5}' />
     </window>
   </windows>
