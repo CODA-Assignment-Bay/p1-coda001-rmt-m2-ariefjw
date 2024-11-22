@@ -21,7 +21,7 @@
     <WindowsPersistSimpleIdentifiers />
     <WorksheetBackgroundTransparency />
   </document-format-change-manifest>
-  <repository-location id='Book1_17321645170890' path='/workbooks' revision='1.7' />
+  <repository-location id='Book1_17321645170890' path='/workbooks' revision='1.8' />
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
@@ -656,7 +656,7 @@
         </groupfilter>
       </group>
       <extract _.fcp.ObjectModelExtractV2.true...object-id='' _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/IDEAPA~1/AppData/Local/Temp/TableauTemp/#TableauTemp_1tu7s2s1jzpbcg1593s4809eezmk.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='11/21/2024 11:32:04 AM' username='tableau_internal_user'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/IDEAPA~1/AppData/Local/Temp/TableauTemp/#TableauTemp_1tu7s2s1jzpbcg1593s4809eezmk.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
           <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D' table='[Extract].[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]' type='table' />
           <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
             <relation name='tour.csv_9D51EB84BB694C29AFB72184018D7676' table='[Extract].[tour.csv_9D51EB84BB694C29AFB72184018D7676]' type='table' />
@@ -707,7 +707,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Place_Name</remote-name>
@@ -722,7 +721,6 @@
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Description</remote-name>
@@ -737,7 +735,6 @@
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Category</remote-name>
@@ -752,7 +749,6 @@
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>City</remote-name>
@@ -767,7 +763,6 @@
               <approx-count>1</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Price</remote-name>
@@ -781,7 +776,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>24</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Rating</remote-name>
@@ -795,7 +789,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>10</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Time_Minutes</remote-name>
@@ -809,7 +802,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>10</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Coordinate</remote-name>
@@ -824,7 +816,6 @@
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Latitude</remote-name>
@@ -838,7 +829,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Longitude</remote-name>
@@ -852,7 +842,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour.csv_9D51EB84BB694C29AFB72184018D7676]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>User Id</remote-name>
@@ -866,7 +855,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>314</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Place Id (tour rating.csv)</remote-name>
@@ -880,7 +868,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Place Ratings</remote-name>
@@ -894,7 +881,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Location</remote-name>
@@ -909,7 +895,6 @@
               <approx-count>28</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Age</remote-name>
@@ -923,7 +908,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>23</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Place Name</remote-name>
@@ -938,7 +922,6 @@
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Category</remote-name>
@@ -953,7 +936,6 @@
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Price</remote-name>
@@ -967,7 +949,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>24</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Rating</remote-name>
@@ -981,7 +962,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>10</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Latitude</remote-name>
@@ -995,7 +975,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Longitude</remote-name>
@@ -1009,7 +988,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data-1732188477417.csv_C9DF1ACE3AC44792A48ED54C41718F3D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>User_Id</remote-name>
@@ -1023,7 +1001,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>313</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour_rating.csv_09E88531DC10446E8CAD6EC542B0D0E3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Place_Id</remote-name>
@@ -1037,7 +1014,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour_rating.csv_09E88531DC10446E8CAD6EC542B0D0E3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Place_Ratings</remote-name>
@@ -1051,7 +1027,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tour_rating.csv_09E88531DC10446E8CAD6EC542B0D0E3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>User_Id</remote-name>
@@ -1065,7 +1040,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>300</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[user.csv_C2A4FD371E8D46088EC9C19A3261ADDA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Location</remote-name>
@@ -1080,7 +1054,6 @@
               <approx-count>28</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[user.csv_C2A4FD371E8D46088EC9C19A3261ADDA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Age</remote-name>
@@ -1094,7 +1067,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>23</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[user.csv_C2A4FD371E8D46088EC9C19A3261ADDA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
           </metadata-records>
         </connection>
@@ -1864,8 +1836,8 @@
         </view>
         <style>
           <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[none:Longitude:qk]' field-type='quantitative' max='12382526.291845262' min='12188745.270291168' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[none:Latitude:qk]' field-type='quantitative' max='-815815.11025963316' min='-939323.89741671132' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[none:Longitude:qk]' field-type='quantitative' max='12343096.645885194' min='12232607.408299576' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0ybo85l04ftxl214cwwpt0bz51nb].[none:Latitude:qk]' field-type='quantitative' max='-840489.76390394242' min='-910911.47815989994' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
           </style-rule>
           <style-rule element='map'>
             <format attr='washout' value='0.0' />
@@ -2994,7 +2966,7 @@
       </cards>
       <simple-id uuid='{FD0B073C-54F6-428E-B39E-5B2EFDB3C34F}' />
     </window>
-    <window class='worksheet' name='Filter'>
+    <window class='worksheet' maximized='true' name='Filter'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -3119,7 +3091,7 @@
       </cards>
       <simple-id uuid='{436942EF-E834-49D8-8791-8E46726F9155}' />
     </window>
-    <window class='dashboard' maximized='true' name='Dashboard 1'>
+    <window class='dashboard' name='Dashboard 1'>
       <viewpoints>
         <viewpoint name='Filter'>
           <zoom type='entire-view' />
